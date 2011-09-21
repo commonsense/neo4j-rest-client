@@ -682,15 +682,15 @@ class Node(Base):
     Node class.
     """
 
-    def __getattr__(self, *args, **kwargs):
-        """
-        HACK: Allow to set node relationship
-        """
-        warnings.warn("Deprecated, in favor of pythonic style to declare "
-                      "relationships: n2.relationships.create(rel_name, n2). "
-                      "This is needed in order to handle pickling in nodes.",
-                      DeprecationWarning)
-        return self._create_relationship(*args, **kwargs)
+#    def __getattr__(self, *args, **kwargs):
+#        """
+#        HACK: Allow to set node relationship
+#        """
+#        warnings.warn("Deprecated, in favor of pythonic style to declare "
+#                      "relationships: n2.relationships.create(rel_name, n2). "
+#                      "This is needed in order to handle pickling in nodes.",
+#                      DeprecationWarning)
+#        return self._create_relationship(*args, **kwargs)
 
     def _create_relationship(self, relationship_name, *args, **kwargs):
         def relationship(to, *args, **kwargs):
